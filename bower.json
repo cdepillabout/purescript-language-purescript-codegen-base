@@ -11,7 +11,7 @@
     "output"
   ],
   "dependencies": {
-    "purescript-language-purescript-base": "^0.0.2",
+    "purescript-language-purescript-base": "^0.0.3",
     "purescript-prelude": "^0.1",
     "purescript-unicode": "~0.0.1",
     "purescript-nonempty": "~0.1.3"
