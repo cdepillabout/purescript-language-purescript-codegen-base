@@ -1,7 +1,7 @@
 -- | Common code generation utility functions
 module Language.PureScript.CodeGen.JS.Common where
 
-import Prelude (bind, show, (<>), map, ($), (<<<), otherwise, (||))
+import Prelude (bind, show, (<>), (/=), map, ($), (<<<), otherwise, (||))
 
 import Data.Array (concat)
 import Data.Char (toCharCode, toString)
@@ -32,9 +32,9 @@ identToJs (Ident name)
 identToJs (Op op) = joinWith "" <<< map identCharToString $ toCharArray op
 identToJs (GenIdent _ _) = internalError "GenIdent in identToJs"
 
--- -- | Test if a string is a valid JS identifier without escaping.
--- identNeedsEscaping :: String -> Boolean
--- identNeedsEscaping s = s /= identToJs (Ident s)
+-- | Test if a string is a valid JS identifier without escaping.
+identNeedsEscaping :: String -> Boolean
+identNeedsEscaping s = s /= identToJs (Ident s)
 
 -- | Attempts to find a human-readable name for a symbol, if none has been specified returns the
 -- ordinal value.
